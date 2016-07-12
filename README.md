@@ -2,6 +2,7 @@
 Coursera course offered by Standford University
 
 Course Topics Part I
+
 Vocabulary for design and analysis of algorithms 
   E.g., "Big-Oh" notation; "sweet spot" for high-level reasoning about algorithms
 
