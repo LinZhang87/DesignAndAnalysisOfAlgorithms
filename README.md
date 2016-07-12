@@ -19,9 +19,15 @@ Use and implementation of data structures
   Heaps, Balanced binary search trees, hashing and some variants(e.g., bloom filters)
 
 Course Topics Part II
+
 Greedy algorithm design paradigm 
+
 Dynamic programming algorithm design paradigm
+
 NP-complete problems and what to do about them
+
 Fast heuristics with provable guarantees
+
 Fast exact algorithms for special cases
+
 Exact algorithms that beat brute-force search  
