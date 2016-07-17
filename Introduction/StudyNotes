@@ -4,3 +4,5 @@ ToStudy-List:
 2. Selection problem:  
     Input: A list of numbers S, an integer k
     Output: The kth smallest(or biggest)element of S
+
+3. Closest pair: How to acheive a O(n log n) run time?
