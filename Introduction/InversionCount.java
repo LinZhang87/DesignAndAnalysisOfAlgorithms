@@ -9,9 +9,11 @@
 * Idea: piggybacking on merge sort
 */
 
+import java.io.*;
+
 public class InversionCount
 {
-	private static int countSplitInv(int[] a, int[] aux, int lo, int mid, int hi)
+	private static long countSplitInv(int[] a, int[] aux, int lo, int mid, int hi)
 	{
 		for(int k = lo; k <= hi; k++)
 		{
@@ -44,20 +46,20 @@ public class InversionCount
 		
 		return invCount;
 	}
-	private static int sortAndCount(int[] a, int[] aux, int lo, int hi)
+	private static long sortAndCount(int[] a, int[] aux, int lo, int hi)
 	{
 		if(hi <= lo)
 		{
 			return 0;
 		}
 		int mid = lo + (hi - lo) / 2;
-		int leftInv, rightInv, splitInv;
+		long leftInv, rightInv, splitInv;
 		leftInv = sortAndCount(a, aux, lo, mid);
 		rightInv = sortAndCount(a, aux, mid+1, hi);
 		splitInv = countSplitInv(a, aux, lo, mid, hi);
 		return leftInv + rightInv + splitInv;
 	}
-	public static int invCount(int[] a)
+	public static long invCount(int[] a)
 	{
 		int[] aux = new int[a.length];
 		return sortAndCount(a, aux, 0, a.length - 1);
@@ -65,11 +67,33 @@ public class InversionCount
 	
 	public static void main(String[] args)
 	{
-		int a[] = {1,3,5,2,4,6};
-		int b[] = {1,2,3,4,5,6};
-		int c[] = {6,5,4,3,2,1};
-		System.out.println(invCount(a));
-		System.out.println(invCount(b));
-		System.out.println(invCount(c));
+		//int a[] = {1,3,5,2,4,6};
+		//int b[] = {1,2,3,4,5,6};
+		//int c[] = {6,5,4,3,2,1};
+		int IntegerArray[] = new int[100000];
+		try
+		{
+			FileInputStream fstream = new FileInputStream("IntegerArray.txt");
+			DataInputStream in = new DataInputStream(fstream);
+			BufferedReader br = new BufferedReader(new InputStreamReader(in));
+			String strLine;
+			int i = 0;
+			
+			while((strLine = br.readLine()) != null)
+			{
+				IntegerArray[i] = Integer.parseInt(strLine);
+				i++;
+			}
+			in.close();
+		}
+		catch(Exception e)
+		{
+				System.err.println("Error: " + e.getMessage());
+		}
+		
+		//System.out.println(invCount(a));
+		//System.out.println(invCount(b));
+		//System.out.println(invCount(c));
+		System.out.println(invCount(IntegerArray));
 	}		
 }
