@@ -1,0 +1,4 @@
+CLRS - Cormen, Leiserson, Rivest, and Stein, Introduction to Algorithms (3rd edition)
+DPV - Dasgupta, Papadimitriou, and Vazirani, Algorithms
+KT - Kleinberg and Tardos, Algorithm Design
+SW - Sedgewick and Wayne, Algorithms (4th edition)
